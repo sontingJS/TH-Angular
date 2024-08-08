@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="grid-container">
+        <div class="grid-item1">
+            <div class="left">
+                <div class="image-banner">
+                    <div class="text-1">Hệ thống quản lý chat đa nền tảng</div>
+                    <div class="text-2">Tiết kiệm thời gian tư vấn và chăm sóc khách hàng</div>
+                    <div class="pagination">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item2">
+            <form [formGroup]="profileForm" *ngIf="isShowForm">
+                <div class="form-input" id="Form">
+                    <div class="header">
+                        <div class="caption">Đăng nhập vào tài khoản của bạn</div>
+                    </div>
+                    <div class="input">
+                        <div class="form-group">
+                            <div class="input-text"><input name="email" type="text" placeholder="Nhập tài khoản"
+                                    class="form-control" id="email" formControlName="email"></div>
+                            <span class="form-message"
+                                *ngIf="(profileForm.controls.email.dirty || profileForm.controls.email.touched)&&profileForm.controls.email.errors?.['required']">Bạn
+                                chưa nhập tài khoản</span>
+                            <span class="form-message"
+                                *ngIf="profileForm.controls.email.value&&profileForm.controls.email.errors?.['email']">Tài
+                                khoản phải là gmail</span>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-text"><input name="password" type="password" placeholder="Nhập mật khẩu"
+                                    class="form-control" id="password" autocomplete="on" formControlName="password">
+                            </div>
+                            <span class="form-message"
+                                *ngIf="profileForm.controls.password.value&&profileForm.controls.password.errors?.['minlength']">Mật
+                                khẩu phải trên 6 kí tự</span>
+                            <span class="form-message"
+                                *ngIf="(profileForm.controls.password.dirty || profileForm.controls.password.touched)&&profileForm.controls.password.errors?.['required']">Bạn
+                                chưa nhập mật khẩu</span>
+                            <!-- <div *ngIf="profileForm.get('password')?.dirty && profileForm.get('password')?.invalid">
+                                <div *ngIf="profileForm.get('password')?.errors?.['required']">
+                                    password is required.
+                                </div>
+                                <div *ngIf="profileForm.get('password')?.errors?.['minlength']">
+                                    password must be at least 6 characters long.
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="checkbox">
+                            <div><input type="checkbox" class="cb-savepw" id="cbSavepw">
+                                <label for="cbSavepw"> Lưu mật khẩu</label>
+                            </div>
+                            <div> <a [routerLink]="['/forgotpassword']" [routerLinkActive]="'active-link'">Quên mật
+                                    khẩu</a> &nbsp;
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit"
+                        (click)="loggin(profileForm.controls.email.value,profileForm.controls.password.value)"
+                        class="btn-login">Đăng nhập</button>
+                    <div class="footer">Bạn chưa có tài khoản?<a href="#"> Đăng kí</a></div>
+                </div>
+            </form>
+            <!-- <ng-template #forgotpassword>
+                <router-outlet></router-outlet>
+            </ng-template> -->
+        </div>
+        <div class="change-lang">
+            <div class="earth"><img src="../../assets/images/earth.svg" alt="">
+            </div>
+            <div class="text">Tiếng Việt</div>
+            <div class="drop-down"><img src="../../assets/images/drop.svg" alt=""></div>
+
+        </div>
+    </div>
+    <div class="alert" *ngIf="isShowAlert">
+        <div class="icon" style="background-color: red;"></div>
+        <div class="message" style="color: rgba(238, 0, 51, 1); margin:0 2%;">Bạn đã nhập sai mật khẩu hoặc tài khoản
+        </div>
+    </div>
+</body>
+
+</html>

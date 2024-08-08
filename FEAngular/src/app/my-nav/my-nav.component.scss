@@ -1,0 +1,27 @@
+.Navbar {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #ff0014c4;
+}
+
+.link {
+    display: flex;
+    gap: 5px;
+    margin-left: 10px;
+}
+
+.btn.btn-primary {
+    /* margin-left: 28px; */
+    margin: 3px 8px;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    width: 90px;
+    height: 34px;
+    /* align-items: center; */
+    background: powderblue;
+    color: white;
+}
