@@ -34,7 +34,8 @@
                             <div class="input-text"><input name="email" type="text" placeholder="Nhập tài khoản"
                                     class="form-control" id="email" formControlName="email"></div>
                             <span class="form-message"
-                                *ngIf="(profileForm.controls.email.dirty || profileForm.controls.email.touched)&&profileForm.controls.email.errors?.['required']">Bạn
+                                *ngIf="(profileForm.controls.email.dirty || profileForm.controls.email.touched)&&
+                                profileForm.controls.email.errors?.['required']">Bạn
                                 chưa nhập tài khoản</span>
                             <span class="form-message"
                                 *ngIf="profileForm.controls.email.value&&profileForm.controls.email.errors?.['email']">Tài
@@ -48,16 +49,9 @@
                                 *ngIf="profileForm.controls.password.value&&profileForm.controls.password.errors?.['minlength']">Mật
                                 khẩu phải trên 6 kí tự</span>
                             <span class="form-message"
-                                *ngIf="(profileForm.controls.password.dirty || profileForm.controls.password.touched)&&profileForm.controls.password.errors?.['required']">Bạn
+                                *ngIf="(profileForm.controls.password.dirty || profileForm.controls.password.touched)&&
+                                profileForm.controls.password.errors?.['required']">Bạn
                                 chưa nhập mật khẩu</span>
-                            <!-- <div *ngIf="profileForm.get('password')?.dirty && profileForm.get('password')?.invalid">
-                                <div *ngIf="profileForm.get('password')?.errors?.['required']">
-                                    password is required.
-                                </div>
-                                <div *ngIf="profileForm.get('password')?.errors?.['minlength']">
-                                    password must be at least 6 characters long.
-                                </div>
-                            </div> -->
                         </div>
                         <div class="checkbox">
                             <div><input type="checkbox" class="cb-savepw" id="cbSavepw">
