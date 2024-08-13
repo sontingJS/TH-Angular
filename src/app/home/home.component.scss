@@ -1,25 +1,30 @@
 .grid-container {
     display: grid;
-    grid-template-areas:
-        'header header header'
-        ' main main main'
-        ' footer footer footer ';
+    // grid-template-areas:
+    //     'header header header'
+    //     ' main main main'
+    //     ' footer footer footer ';
 
     background-color: #2196F3;
     //   padding: 10px;
+    grid-template-rows: 10vh 83vh 7vh;
     height: 100vh;
 
     .item1 {
-        grid-area: header;
+        grid-row-start: 1;
+        grid-row-end: 2;
     }
 
     .item3 {
-        grid-area: main;
+        grid-row-start: 2;
+        grid-row-end: 3;
     }
 
     .item5 {
-        grid-area: footer;
-        background-color: bisque;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        background-color: darkgrey;
+        
     }
 }
 
