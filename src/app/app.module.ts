@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MyNAVComponent } from './my-nav/my-nav.component';
 import { AboutComponent } from './about/about.component';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AboutComponent } from './about/about.component';
     ForgotPasswordComponent,
     HomeComponent,
     MyNAVComponent,
-    AboutComponent
+    AboutComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

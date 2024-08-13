@@ -1,8 +1,8 @@
 <div *ngIf="isLoggedIn$ | async as isLoggedIn" class="Navbar">
   <div class="link">
-    Đây là navbar &nbsp;
-    <a [routerLink]="['/home']" [routerLinkActive]="'active-link'">Home</a> &nbsp;
-    <a [routerLink]="['/about']" [routerLinkActive]="'active-link'">About</a>
+    Đây là Header navbar &nbsp;
+    <a [routerLink]="['product']" [routerLinkActive]="'active-link'">Product</a> &nbsp;
+    <a [routerLink]="['about']" [routerLinkActive]="'active-link'">About</a>
     &nbsp;
   </div>
   <button (click)="logout()" *ngIf="isLoggedIn" class="btn btn-primary">Logout</button>
